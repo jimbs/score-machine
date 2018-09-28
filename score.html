@@ -1,0 +1,58 @@
+<style>
+  a{
+  text-decoration:none;
+}
+</style>
+
+
+
+<script type="text/javascript">
+	function playerone(){
+  var a = document.getElementById("player1").innerHTML;
+  var anum = Number(a);
+  anum += 1;
+  document.getElementById("player1").innerHTML = anum;
+}
+	function playertwo(){
+  var a = document.getElementById("player2").innerHTML;
+  var anum = Number(a);
+  anum += 1;
+  document.getElementById("player2").innerHTML = anum;
+}
+
+function reset(){
+	document.getElementById('player1').innerHTML = 0
+	document.getElementById('player2').innerHTML = 0
+
+}
+
+function buttonDisable(){
+	a = Number(document.getElementById('player1').innerHTML)
+	b = Number(document.getElementById('player2').innerHTML)
+
+	if(a === 5){
+		a.setAttribute('disabled','')
+		b.setAttribute('disabled','')
+	}
+	else if(b === 5){
+		a.setAttribute('disabled','')
+		b.setAttribute('disabled','')
+	}
+	console.log("the value is" + a + " and " + b)
+}
+
+</script>
+
+
+<a id="player1" href="">0</a> <span> to </span> <a id="player2" href="">0</a>
+
+<br/><br/>
+
+Playing in 5:<br/>
+
+
+<input value="" onchange="buttonDisable()" width="3px"></input>
+<button id="p1c" onclick="playerone()">Player 1</button>
+<button id ="p2c" onclick="playertwo()">Player 2</button>
+<button id= "reset" onclick="reset()">Reset</button>
+
